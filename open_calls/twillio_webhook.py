@@ -21,7 +21,7 @@ def handle_request():
 
     out_msg = game.run(request.form['Body'])
 
-    message = g.sms_client.messages.create(
+    g.sms_client.messages.create(
         body=out_msg,
         from_=yml_configs['twillio']['phone_number'],
         to=request.form['From'])
