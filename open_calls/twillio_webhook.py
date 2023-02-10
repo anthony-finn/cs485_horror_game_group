@@ -11,23 +11,23 @@ with open('config.yml', 'r') as yml_file:
 
 def handle_request():
     phone_number = request.form['From']
-    path = 'players/' + phone_number = '.pk'
+    path = 'players/' + phone_number + '.pk'
 
     # Load the game state, or create new if needed
     if os.path.exists(path):
-        with open(path, 'rw') as file_read:
+        with open(path, 'rb') as file:
             game = pickle.load(file)
     else:
-        game = player(phone_number)
+        game = GameState(phone_number)
 
     out_msg = game.run(request.form['Body'])
 
     message = g.sms_client.messages.create(
         body=out_msg,
-        from=yml_configs['twillio']['phone_number'],
+        from_=yml_configs['twillio']['phone_number'],
         to=request.form['From'])
 
-    with open(path, 'w') as write_file:
-        pickle.dump(game, write_file)
+    with open(path, 'wb') as file:
+        pickle.dump(game, file)
 
     return json_response(status = "ok")
