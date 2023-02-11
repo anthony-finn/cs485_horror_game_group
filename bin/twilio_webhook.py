@@ -1,6 +1,5 @@
 import yaml
 from flask import request, g
-from flask_json import FlaskJSON, JsonError, json_response, as_json
 from classes.game_state import GameState
 import pickle
 import os
@@ -23,7 +22,7 @@ def handle_request():
 
     g.sms_client.messages.create(
         body=out_msg,
-        from_=yml_configs['twillio']['phone_number'],
+        from_=yml_configs['twilio']['phone_number'],
         to=request.form['From'])
 
     with open(path, 'wb') as file:

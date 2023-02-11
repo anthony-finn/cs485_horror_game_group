@@ -14,14 +14,13 @@ app = Flask(__name__)
 # Home directory routing
 @app.route('/')
 def home():
-    return "This is a test."
+    return make_response("OK", 200)
 
-@app.route('/open_api/<proc_name>', methods = ['POST'])
-def twilio_webhook(proc_name):
+@app.route('/open_api/twillio_webhook', methods = ['POST'])
+def twilio_webhook():
     # Log Webhook Call
-    logger.debug(proc_name)
     logger.debug(f"Twilio webhook called.")
-    print("hello")
+
     # Create variables for HTTP response
     response = ''
     code = 200
@@ -48,4 +47,4 @@ def twilio_webhook(proc_name):
 
 # Run Server
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=80)
+    serve(app, host="0.0.0.0", port=80)
