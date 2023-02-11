@@ -1,7 +1,7 @@
 import traceback
 from flask import Flask, make_response, g
 from waitress import serve
-from open_calls.twillio_webhook import handle_request
+from bin.twilio_webhook import handle_request
 from tools.logging import logger
 from tools.secrets import get_secrets
 from tools.twilio import get_sms_client
