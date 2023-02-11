@@ -1,3 +1,4 @@
+#!/home/ubuntu/anaconda3/bin/python3
 import traceback
 from flask import Flask, make_response, g
 from waitress import serve
@@ -13,13 +14,14 @@ app = Flask(__name__)
 # Home directory routing
 @app.route('/')
 def home():
-    return make_response('OK', 200)
+    return "This is a test."
 
-@app.route('/open_api/twillio_webhook', methods = ['POST'])
-def twilio_webhook():
+@app.route('/open_api/<proc_name>', methods = ['POST'])
+def twilio_webhook(proc_name):
     # Log Webhook Call
+    logger.debug(proc_name)
     logger.debug(f"Twilio webhook called.")
-
+    print("hello")
     # Create variables for HTTP response
     response = ''
     code = 200
@@ -46,4 +48,4 @@ def twilio_webhook():
 
 # Run Server
 if __name__ == '__main__':
-    serve(app, host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=80)

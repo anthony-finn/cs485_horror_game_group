@@ -29,4 +29,4 @@ def handle_request():
     with open(path, 'wb') as file:
         pickle.dump(game, file)
 
-    return json_response(status = "ok")
+    return "OK", 200
