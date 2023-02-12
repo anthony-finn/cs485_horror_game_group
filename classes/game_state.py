@@ -20,15 +20,15 @@ class GameState:
         # TODO: Transition to a new state as needed.
         #       If there is a new state, get its message (including possible actions)
         #       and return it from this method.
-        choices = choice_state.choices
+        choices = choice_state.data.choices
         if last_msg in choices:
-            self.state = choice_state.choices[last_msg]
+            self.state = choices[last_msg]
             next_choice_state = Choice(self.state)
-            return next_choice_state.message
-        elif "next_state" in choice_state:
+            return next_choice_state.data.message
+        elif "next_state" in choice_state.data:
             self.state = choice_state.next_state
             next_choice_state = Choice(self.state)
-            return next_choice_state.message
+            return next_choice_state.data.message
 
         # Invalid Option, so resend message
         return choice_state.message
