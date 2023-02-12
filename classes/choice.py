@@ -6,5 +6,5 @@ class Choice:
             data = json.load(file)
             file.close()
         
-        for (key, value) in data.items():
-            self[key] = value
+        for key, value in data[state_id].items():
+            setattr(self, key, value)

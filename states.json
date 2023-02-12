@@ -1,14 +1,12 @@
 {
-    "choice_states": {
-      "0": {
+    "0": {
         "choices": {},
         "next_state": "1"
-      },
-      "1": {
+    },
+    "1": {
         "message": "You've reached [Forest of the Damned], an SMS-based game! Text BEGIN to this number to start a new game. Text HELP for a complete list of commands. (Note: Commands are case-sensitive.)",
         "choices": {
           "BEGIN": "2"
         }
-      }
     }
-  }
+}
