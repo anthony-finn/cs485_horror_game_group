@@ -29,7 +29,7 @@ def twilio_webhook():
     g.secrets = get_secrets()
     g.sms_client = get_sms_client()
 
-    # Attempt to execute webhook (calls open_calls.twillio_webhook.handle_request)
+    # Attempt to execute webhook (calls bin.twilio_webhook.handle_request)
     try:
         response, code = handle_request()
     except Exception as error:
