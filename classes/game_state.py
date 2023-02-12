@@ -25,7 +25,7 @@ class GameState:
             self.state = choices[last_msg]
             next_choice_state = Choice(self.state)
             return next_choice_state.message
-        elif "next_state" in choice_state:
+        elif hasattr(choice_state, 'next_state'):
             # No Input Required, thus set state to "next_state"
             self.state = choice_state.next_state
             next_choice_state = Choice(self.state)
