@@ -1,6 +1,13 @@
 Dialogue for the game to be kept:
 
+NOTE:
+-----
+This file contains a rough draft of the story and the messages
+posted here are examples of what we should send to the player.
+
+
 Introduction:
+-------------
 You are a prisoner that has been ordered by the fascist state
 to hunt down crystals essential for their empire. The
 guards pushed you out of the truck ordering you to mine or
@@ -8,12 +15,14 @@ be executed. The dark forest is known to be as a no mans land
 as prisoners ordered to mine have never returned.
 
 Mined the first crystal:
+------------------------
 You have mined and found the first crystal. Though something seems off.
 The forest seems unusually quiet and the crows that produced the only
 sound apart from your footsteps seem to die down. You believe that you
 should return with what you have? Would you?
 
 Mined the second and third crystals:
+------------------------------------
 Another crystal has been found! However, as you much as you want to be
 proud of your work, your situation pulls you back. Knowing how the 
 empire has been known to punish prisoners severely as well as the
@@ -21,6 +30,7 @@ rumor of prisoners being transferred somewhere else once their sentences
 are up. Will you return with what you have?
 
 Mined the fourth crystal:
+-------------------------
 Something seems off about the situation. As you have almost completed
 your tasks, some whispers can be heard. You tried to decipher what is
 being said however it is futile as the language spoken seems inhuman.
@@ -28,6 +38,7 @@ The fog seems to be getting darker which results in the whispers getting
 louder. You can't take it. Should you return or find that final crystal?
 
 Mined the last crystal and good ending:
+--------------------------------------
 You found it! The last crystal! The whispers and your prediction of your
 fate was not able to overcome your ambition. You quickly ran back to
 the prison guards that are waiting. However, it looked as someone or
@@ -45,6 +56,7 @@ truck keys and start the truck. You drove away from this damned forest,
 wishing you never encounter what you have witnessed again.
 
 If you did not collect all the crystals, this would be the bad ending:
+---------------------------------------------------------------------
 Coming back with X amount of crystals, you bowed your head in shame
 not successful in completing your task. You expected the worst, either
 another beating or an extension to your sentence. However, as you
@@ -63,14 +75,17 @@ another statistic to the rumor of prisoners never coming back from
 this forest.
 
 Monster encounter:
+------------------
 Traversing through this forest, you hear an unusual growl from behind.
 You turn to find some beast that seems inhuman.
 
 If a weapon was found, you killed the beast:
+--------------------------------------------
 Using the weapon that you found, before it has a chance to attack, you
 shot your weapon at it, killing it instantly. Being a bit shaken from
 the encounter, you know you have to continue on.
 
 If a weapon was not found, it would result in an early death:
+-------------------------------------------------------------
 You tried outrunning the beast to no avail. You were savagely killed
 by the beast as you had no way to protect yourself.
