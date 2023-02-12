@@ -1,7 +1,7 @@
 import json
 
 class Choice:
-    def __init__(self, state_id):
+    def __init__(self, state_id: str):
         with open('states.json', 'r') as file:
             data = json.load(file)
             file.close()

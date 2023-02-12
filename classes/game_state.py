@@ -6,7 +6,7 @@ class GameState:
         self.phone_number = phone_number
 
         # Initial game state ↓
-        self.state = 0
+        self.state = "0"
         self.data = {
             'minerals': []
         }
