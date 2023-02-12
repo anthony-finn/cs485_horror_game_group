@@ -1,0 +1,76 @@
+Dialogue for the game to be kept:
+
+Introduction:
+You are a prisoner that has been ordered by the fascist state
+to hunt down crystals essential for their empire. The
+guards pushed you out of the truck ordering you to mine or
+be executed. The dark forest is known to be as a no mans land
+as prisoners ordered to mine have never returned.
+
+Mined the first crystal:
+You have mined and found the first crystal. Though something seems off.
+The forest seems unusually quiet and the crows that produced the only
+sound apart from your footsteps seem to die down. You believe that you
+should return with what you have? Would you?
+
+Mined the second and third crystals:
+Another crystal has been found! However, as you much as you want to be
+proud of your work, your situation pulls you back. Knowing how the 
+empire has been known to punish prisoners severely as well as the
+rumor of prisoners being transferred somewhere else once their sentences
+are up. Will you return with what you have?
+
+Mined the fourth crystal:
+Something seems off about the situation. As you have almost completed
+your tasks, some whispers can be heard. You tried to decipher what is
+being said however it is futile as the language spoken seems inhuman.
+The fog seems to be getting darker which results in the whispers getting
+louder. You can't take it. Should you return or find that final crystal?
+
+Mined the last crystal and good ending:
+You found it! The last crystal! The whispers and your prediction of your
+fate was not able to overcome your ambition. You quickly ran back to
+the prison guards that are waiting. However, it looked as someone or
+something has attacked as the truck as been damaged and the guards
+being killed. Examining them, they have been killed by some sort
+of monster based on their wounds.
+As you turn around, you see a silhouette of a tall figure. The figure
+comes closer and exposes itself as the demon of the damned forest. As
+punishment for invading its home, it exposes her true form which is
+something humans can not face. However, with all the crystals, you 
+expose them to the demon which causes a demonic screech and a fire
+portal opening up with it being sunk in returning to hell.
+After seeing something terrified, you examine the prisoners for the 
+truck keys and start the truck. You drove away from this damned forest,
+wishing you never encounter what you have witnessed again.
+
+If you did not collect all the crystals, this would be the bad ending:
+Coming back with X amount of crystals, you bowed your head in shame
+not successful in completing your task. You expected the worst, either
+another beating or an extension to your sentence. However, as you
+returned you find the guards dead. Examining their wounds, they were
+attacked by something inhuman. 
+As you turn around, you see a silhouette of a tall figure. The figure
+comes closer and exposes itself as the demon of the damned forest. As
+punishment for invading its home, it exposes her true form which is 
+something humans can not face.
+As it exposes itself, your worst memories flash before your eyes. The
+grief, the sadness, the anger all returning. It is as all of your
+happy and positive memories vanished and you have no recollection.
+Succumbing to your rapid depression, you take one of the guard's 
+knives and stabbed yourself, ending your life. In the end, you are 
+another statistic to the rumor of prisoners never coming back from
+this forest.
+
+Monster encounter:
+Traversing through this forest, you hear an unusual growl from behind.
+You turn to find some beast that seems inhuman.
+
+If a weapon was found, you killed the beast:
+Using the weapon that you found, before it has a chance to attack, you
+shot your weapon at it, killing it instantly. Being a bit shaken from
+the encounter, you know you have to continue on.
+
+If a weapon was not found, it would result in an early death:
+You tried outrunning the beast to no avail. You were savagely killed
+by the beast as you had no way to protect yourself.
