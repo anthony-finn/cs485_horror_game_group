@@ -1,23 +1,19 @@
 #!/usr/bin/python3
 """
 A terminal interface that simulates SMS. It has two purposes: testing the game
-locally and reducing Prof. Jardin's SMS bill while we're doing so.
+locally, and reducing Prof. Jardin's SMS bill while we're doing so.
 """
 
 from classes.game_state import GameState
 import pickle
-import os
 from sys import stdin, stdout
 
 SAVEGAME = 'players/local_terminal.pk'
 
 def main():
     # Load the game state, or create new if needed.
-    if os.path.exists(SAVEGAME):
-        with open(SAVEGAME, 'rb') as file:
-            game = pickle.load(file)
-    else:
-        game = GameState('local_terminal.pk')
+    game = GameState("local_terminal")
+    game.load() or game.start_new_game()
 
     print("Terminal SMS simulator ready!")
 
@@ -30,7 +26,7 @@ def main():
             print() # Send one last \n for the coming shell prompt, as a courtesy.
             break
 
-        out_msg = game.run(in_msg)
+        out_msg = game.run(in_msg[:-1])
 
         with open(SAVEGAME, 'wb') as file:
             pickle.dump(game, file)

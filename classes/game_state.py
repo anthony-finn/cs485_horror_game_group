@@ -1,26 +1,43 @@
 from classes.choice import Choice
+import os
+import pickle
 
 class GameState:
     def __init__(self, phone_number):
-        """Creates a new game."""
         self.phone_number = phone_number
+        self.state = None
+        self.data = None
 
-        # Initial game state ↓
+    def get_save_path(self) -> str:
+        return f"players/{self.phone_number}.pk"
+
+    def start_new_game(self):
         self.state = "0"
         self.data = {
             'minerals': []
         }
 
-    def run(self, last_msg: str) -> str:
-        """Executes one cycle of game logic. Retunrs the message to send to the player."""
+    def load(self):
+        """Attempts to load the save game. Returns `True` if it exists."""
+        path = self.get_save_path()
+        if os.path.exists(path):
+            with open(path, 'rb') as file:
+                loaded = pickle.load(file)
 
-        # TODO: Pass `last_msg` to the current state.
-        #       There, Determine if the user's input is a valid action.
+                self.state = loaded.state # No way to dereference `self` :/
+                self.data = loaded.data
+
+                return self
+        else:
+            return None
+
+    def run(self, last_msg: str) -> str:
+        """Executes one cycle of game logic. Retunrs a message to send to the player."""
+
         choice_state = Choice(self.state)
-        # TODO: Transition to a new state as needed.
-        #       If there is a new state, get its message (including possible actions)
-        #       and return it from this method.
         choices = choice_state.choices
+
+        # Determine if the user's input is a valid action.
         if last_msg in choices:
             self.state = choices[last_msg]
             next_choice_state = Choice(self.state)
@@ -33,3 +50,7 @@ class GameState:
 
         # Invalid Option, so resend message
         return choice_state.message
+
+    def save(self):
+        with open(self.get_save_path(), 'wb') as file:
+            pickle.dump(self, file)
