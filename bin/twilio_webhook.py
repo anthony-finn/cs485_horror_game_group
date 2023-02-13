@@ -20,7 +20,7 @@ def handle_request():
 
     g.sms_client.messages.create(
         body=out_msg,
-        from_=yml_configs['twillio']['phone_number'],
+        from_=yml_configs['twilio']['phone_number'],
         to=request.form['From'])
 
     with open(path, 'wb') as file:
