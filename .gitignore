@@ -1,6 +1,10 @@
 # Player data
 players/*.pk
 
+# Vim
+**/Session*.vim
+**/.*.swp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
