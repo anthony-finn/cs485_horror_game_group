@@ -1,12 +1,9 @@
-import yaml
 from flask import request, g
-from flask_json import FlaskJSON, JsonError, json_response, as_json
 from classes.game_state import GameState
 import pickle
 import os
 
-with open('config.yml', 'r') as yml_file:
-    yml_configs = yaml.safe_load(yml_file)
+from tools.config import yml_configs
 
 def handle_request():
     phone_number = request.form['From']
