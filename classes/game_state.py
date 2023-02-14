@@ -2,23 +2,46 @@ from classes.choice import Choice
 import os
 import pickle
 
+SCRIPT_DIR = os.path.dirname(__file__)
+
 class GameState:
     def __init__(self, phone_number):
         self.phone_number = phone_number
+        self.clear()
+
+    def get_save_path(self) -> str:
+        return f"{SCRIPT_DIR}/../players/{self.phone_number}.pk"
+
+    def is_loaded(self):
+        return self.state is not None
+
+    def get_last_message(self) -> str:
+        return Choice(self.state).message
+
+    def clear(self):
+        """Clears the in-memory state data. Does not remove save game on disk!"""
         self.state = None
         self.data = None
 
-    def get_save_path(self) -> str:
-        return f"players/{self.phone_number}.pk"
+    def delete_save(self):
+        os.remove(self.get_save_path())
+        self.clear()
 
     def start_new_game(self):
-        self.state = "0"
+        self.state = "1"
         self.data = {
             'minerals': []
         }
 
     def load(self):
-        """Attempts to load the save game. Returns `True` if it exists."""
+        """
+        Attempts to load the save game. Returns `self` if save game has been
+        successfully loaded; does nothing and returns `self` if it has already
+        been loaded; returns `None` if no save game exists.
+        """
+        if self.is_loaded():
+            return self
+
         path = self.get_save_path()
         if os.path.exists(path):
             with open(path, 'rb') as file:
