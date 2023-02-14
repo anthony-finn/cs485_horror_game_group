@@ -89,3 +89,23 @@ If a weapon was not found, it would result in an early death:
 -------------------------------------------------------------
 You tried outrunning the beast to no avail. You were savagely killed
 by the beast as you had no way to protect yourself.
+
+Items:
+------
+Crystal: Essential for getting good ending. 5 are needed.
+Pickaxe: Mines crystal. Good for 2 uses.
+Scimitar: Weapon used against hellhound. Good to protect against 1 attack.
+
+Locations:
+----------
+Abandoned house: House that is in ruins which contains 1 crystal and 
+1 pickaxe.
+
+Skeleton: Skeleton of an unfortunate prisoner. Contains 1 pickaxe.
+
+Burned up tree: Tree which contains 1 crystal.
+
+Hostile:
+--------
+Hellhound: Hostile against player. Possibility of spawning would increase
+as player gets more crystals.
