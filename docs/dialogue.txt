@@ -109,3 +109,7 @@ Hostile:
 --------
 Hellhound: Hostile against player. Possibility of spawning would increase
 as player gets more crystals.
+
+Direction/Graph of the game map:
+-------------------------------
+The game should be visualized as a 5x5 graph with each row containing a crystal. The locations are guaranteed places to collect the crystals though some may be scattered in the map. As the player contains more crystals, the chance to spawn a hellhound would be increased from 0% initially and the 1st crystal increasing by 20% to 80% in the final crystal.
