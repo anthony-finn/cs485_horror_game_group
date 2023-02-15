@@ -25,7 +25,9 @@ def main():
 
         out_msg = handle_input(game, in_msg[:-1])
 
-        print(out_msg)
+        print(
+            out_msg,
+            end='' if out_msg[-1] == '\n' else '\n')
         stdout.flush()
 
 if __name__ == "__main__": main() # Execute only if this file is run directly

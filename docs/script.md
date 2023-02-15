@@ -18,11 +18,9 @@ To view a list of commands, text HELP (in all caps).
 
 > pipes (#000)
 
-We only surrounded the word 'pipes' in pipes to tell you their name and meaning. Nonetheless, your use of the action 'pipes' is correct according to the rule we just taught you, and we respect your outside-the-box thinking.
+We only surrounded the word 'pipes' in pipes to tell you their name and meaning. Nonetheless, your usage is correct according to the rule we just taught you. We respect your outside-the-box thinking, so consider this an Easter Egg.
 
-We humbly present to you this Easter egg! Feel free to brag about it to anyone who will listen.
-
-The game's exposition and plot takes influence from the Slenderman video game released in 2012 as well as the demonic theme taken from HP Lovecraft's "Call of Cthulu". 
+The game's exposition and plot takes influence from the Slenderman video game released in 2012 as well as the demonic theme taken from HP Lovecraft's "Call of Cthulu".
 
 [GOTO Exposition]
 
