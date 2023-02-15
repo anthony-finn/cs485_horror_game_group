@@ -5,7 +5,7 @@ from bin.handle_input import handle_input
 
 def handle_request():
     phone_number = request.form['From']
-    game = GameState(phone_number).load()
+    game = GameState(phone_number)
 
     out_msg = handle_input(game, request.form['Body'])
 

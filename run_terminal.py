@@ -10,8 +10,6 @@ from sys import stdin, stdout
 
 def main():
     game = GameState('local_terminal')
-    game.load() # On the terminal, the save game stays loaded.
-
     print("Terminal SMS simulator ready!")
 
     # Main game loop

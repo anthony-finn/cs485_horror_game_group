@@ -7,13 +7,13 @@ from tools.config import PROJECT_ROOT
 class GameState:
     def __init__(self, phone_number):
         self.phone_number = phone_number
-        self.clear()
+        self.load() or self.clear()
 
     def get_save_path(self) -> str:
         return f"{PROJECT_ROOT}/players/{self.phone_number}.pk"
 
     def is_loaded(self):
-        return self.state is not None
+        return getattr(self, "state", None) is not None
 
     def save_exists(self) -> bool:
         return os.path.exists(self.get_save_path())
