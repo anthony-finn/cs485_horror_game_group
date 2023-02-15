@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 """
 A terminal interface that simulates SMS. It has two purposes: testing the game
-locally, and reducing Prof. Jardin's SMS bill while we're doing so.
+locally, and reducing Prof. Jardin's SMS bill while we do so.
 """
 
 from classes.game_state import GameState
-import pickle
+from bin.handle_input import handle_input
 from sys import stdin, stdout
 
-SAVEGAME = 'players/local_terminal.pk'
-
 def main():
-    # Load the game state, or create new if needed.
-    game = GameState("local_terminal")
-    game.load() or game.start_new_game()
-
+    game = GameState('local_terminal')
     print("Terminal SMS simulator ready!")
 
     # Main game loop

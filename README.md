@@ -15,5 +15,5 @@ sudo ./run_server.py
 Mainly for development purposes, it is possible to simulate the SMS interface through your local terminal, by
 
 ```sh
-sudo ./run_server.py
+sudo ./run_terminal.py
 ```

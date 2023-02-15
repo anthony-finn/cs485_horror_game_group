@@ -1,0 +1,28 @@
+{
+    "0": {
+        "message": "You've reached Forest of the Damned, an SMS-based game! Text BEGIN to this number to start a new game. Text CMDS for a list of all commands. (Note: Commands are case-sensitive.)",
+        "choices": {}
+    },
+    "1": {
+        "message": "Welcome to Forest of the Damned! Throughout the game, you will see actions surrounded with [brackets]. Text us that phrase without the brackets to perform the action. (Case does not matter.) Type [ok] to continue.",
+        "choices": {
+            "ok": "3",
+            "brakcets": "2"
+        }
+    },
+    "2": {
+        "message": "We only surrounded the word 'brackets' in brackets to connect the characters to their name. Nonetheless, your usage is correct according to the rule we just taught you. We respect your outside-the-box thinking, so consider this an Easter Egg!\n\nText anything to continue.",
+        "choices": {},
+        "next_state": "3"
+    },
+    "3": {
+        "message": "You are a prisoner that has been ordered by the fascist state to hunt down crystals essential for their empire. The guards pushed you out of the truck ordering you to mine or be executed. The dark forest is known as a no-man's land, as prisoners ordered to mine have never returned.",
+        "choices": {},
+        "next_state": "4"
+    },
+    "4": {
+        "message": "This is just a test; that is all for now. Text BEGIN to start a new game.",
+        "choices": {},
+        "next_state": "4"
+    }
+}
