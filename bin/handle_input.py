@@ -14,7 +14,7 @@ COMMANDS = {
     "BEGIN":   GameState.start_new_game,
     "DELETE":  GameState.delete_save,
     "LAST":    GameState.get_last_message,
-    "HELP":    get_command_help,
+    "CMDS":    get_command_help,
     "CREDITS": get_credits,
 
     # Aliases

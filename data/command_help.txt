@@ -1,4 +1,4 @@
 • BEGIN: Start a new game. This cannot be undone!
 • DELETE: Delete all your user data. This cannot be undone!
 • LAST: Resend the last game message.
-• HELP: Show this message.
+• CMDS: Show this message.
