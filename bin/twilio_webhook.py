@@ -8,12 +8,13 @@ def handle_request():
     game = GameState(phone_number)
     game.load() or game.start_new_game()
 
-    out_msg = game.run(request.form['Body'])
+    out_msgs = game.run(request.form['Body'])
 
-    g.sms_client.messages.create(
-        body=out_msg,
-        from_=yml_configs['twilio']['phone_number'],
-        to=request.form['From'])
+    for out_msg in out_msgs:
+        g.sms_client.messages.create(
+            body=out_msg,
+            from_=yml_configs['twilio']['phone_number'],
+            to=request.form['From'])
 
     game.save()
 
