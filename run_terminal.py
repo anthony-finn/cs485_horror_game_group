@@ -21,13 +21,11 @@ def main():
             print() # Send one last \n for the coming shell prompt, as a courtesy.
             break
 
-        out_msgs = game.run(in_msg[:-1])
+        out_msg = handle_input(game, in_msg[:-1])
 
-        with open(SAVEGAME, 'wb') as file:
-            pickle.dump(game, file)
-
-        for out_msg in out_msgs:
-            print(out_msg)
+        print(
+            out_msg,
+            end='' if out_msg[-1] == '\n' else '\n')
         stdout.flush()
 
 if __name__ == "__main__": main() # Execute only if this file is run directly
