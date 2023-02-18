@@ -1,14 +1,16 @@
+//BASIC commands given. Should be relevant in the intial state.
+
 • BEGIN: Start a new game. This cannot be undone!
 • DELETE: Delete all your user data. This cannot be undone!
 • LAST: Resend the last game message.
 • CMDS: Show this message.
 
-//Top to be deleted later. Bottom to contain some commands relevant to our game.
+//Commands relevant to movement and actions.
 
 • HEAD_N: Head north.
 • HEAD_S: Head south.
 • HEAD_E: Head east.
 • HEAD_W: Head west.
-• RETURN: Return to the start with what you have. Would result in a bad ending.
+• RETREAT: Return to the start with what you have. Would result in a bad ending.
 • MINE: Collect mineral.
 • ATTACK: Attack hostile hell beast if weapon obtained.
