@@ -19,7 +19,7 @@ def home():
 @app.route('/open_api/twillio_webhook', methods = ['POST'])
 def twilio_webhook():
     # Log Webhook Call
-    logger.debug(f"Twilio webhook called.")
+    logger.debug("Twilio webhook called.")
 
     # Create variables for HTTP response
     response = ''
@@ -38,7 +38,7 @@ def twilio_webhook():
         exception_data = exception_data + str(error) + '\n'
         exception_data = exception_data + traceback.format_exc()
         logger.error(exception_data)
-        
+
         response = 'Internal Server Error'
         code = 500
 

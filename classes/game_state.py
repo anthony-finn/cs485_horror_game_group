@@ -72,6 +72,7 @@ class GameState:
     def run(self, last_msg: str) -> str:
         """Executes one cycle of game logic. Retunrs a message to send to the player."""
 
+        last_msg = last_msg.lower()
         choice_state = Choice(self.state)
         choices = choice_state.choices
 
