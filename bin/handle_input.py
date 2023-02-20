@@ -35,4 +35,5 @@ def handle_input(game: GameState, in_msg: str) -> str:
     else:
         out_msg = NO_SAVE_MSG
 
-    return out_msg
+    if out_msg: return out_msg
+    else: return "Empty game message; this should not happen."
