@@ -116,8 +116,17 @@ The game is set to be a 4x4 grid with the player starting at coordinate (1,1).
 Locations of certain points of interests (POIs) are TBD. The POIs are the
 following: Abandoned House, Skeleton, Burned Tree. POIs will be guaranteed
 crystal locations. Remaining 2 would spawn randomly within the map.
-
+House: (1,4) ; Skeleton (3,2); Tree (4,4)
 Additional dialogue:
 --------------------
 This dialogue is to contain that nothing is found within a coordinate and would
-instead the following. TO BE WRITTEN.
+instead the following.
+
+Empty coordinate (added at the end
+of each message): Observing the surrounding area, nothing can be found.
+
+1: Traversing through this purgatory, the little hope you currently have is
+struggling to maintain as escaping would mean certain death after hearing the
+rumors that no one can leave.
+
+TBW
