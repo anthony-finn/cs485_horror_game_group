@@ -40,9 +40,11 @@ class GameState:
             return "No save game for this phone number. Text BEGIN (in caps) to start a new game."
 
     def start_new_game(self, _ = None) -> str:
-        self.state = "1"
+        self.state = "intro"
+        self.last_state = ""
         self.data = {
-            'minerals': []
+            'crystals': [],
+            'pickaxe': 1
         }
 
         self.save()
@@ -77,11 +79,26 @@ class GameState:
 
         # Determine if the user's input is a valid action.
         if last_msg in choices:
+            self.last_state = self.state
             self.state = choices[last_msg]
             next_choice_state = Choice(self.state)
+
+            # Special Game States
+            if last_msg == "mine":
+                if self.data['pickaxe'] == 0:
+                    return "You are unable to perform this action! You do not have a pickaxe."
+
+            if hasattr(next_choice_state, 'data'):
+                for index in next_choice_state.data:
+                    value = next_choice_state.data[index]
+                    if type(value) is int:
+                        self.data[index] += value
+                
+
             return next_choice_state.message
         elif hasattr(choice_state, 'next_state'):
             # No Input Required, thus set state to "next_state"
+            self.last_state = self.state
             self.state = choice_state.next_state
             next_choice_state = Choice(self.state)
             return next_choice_state.message

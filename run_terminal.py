@@ -22,7 +22,7 @@ def main():
             break
 
         out_msg = handle_input(game, in_msg[:-1])
-
+        
         print(
             out_msg,
             end='' if out_msg[-1] == '\n' else '\n')

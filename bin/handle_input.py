@@ -22,7 +22,7 @@ COMMANDS = {
     "REPEAT":  GameState.get_last_message,
 }
 
-NO_SAVE_MSG = Choice("0").message
+NO_SAVE_MSG = Choice("init").message
 
 def handle_input(game: GameState, in_msg: str) -> str:
     found_cmd = COMMANDS.get(in_msg)
