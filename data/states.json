@@ -20,35 +20,28 @@
         "choices": {},
         "next_state": "1, 1"
     },
-    "end": {
-        "message": "This is just a test; that is all for now. Text BEGIN to start a new game.",
-        "choices": {},
-        "next_state": "end"
-    },
-    "first_crystal": {
-        "message": "You have mined and found the first crystal. Though something seems off. The forest seems unusually quiet and the crows that produced the only sound apart from your footsteps seem to die down. You believe that you should return with what you have? Would you?",
-        "next_state": "1, 2",
-        "data": {
-            "crystal": [1],
-            "pickaxe": -1
-        },
-        "choices": {}
-    },
     "1, 1": {
-        "message": "You are at (1,1)",
+        "message": "Walking through the forest, you find pawprints that were a bit strange. At first, you thought the guards released the hounds however the prints are much larger than any hound or other animal. Observing the surrounding area, nothing can be found. Should you head [east] or [south]?",
         "choices": {
-            "south": "1, 2",
-            "east": "2, 1"
+            "south": "1, 2 - special",
+            "east": "2, 1 - special"
         }
     },
-    "1, 2": {
-        "message": "You see something glowing in the wall. Type [mine] to find the first crystal.",
+    "1, 2": {},
+    "1, 2 - special": {
+        "message": "You stumble upon a glowing purple crystal embedded within a stone. This is one of the stones that the state is searching for, and you should [mine] it.",
         "choices": {
-            "mine": "first_crystal"
+            "mine": "first_crystal - south"
         }
     },
     "1, 3": {},
     "1, 4": {},
+    "2, 1 - special": {
+        "message": "You stumble upon a glowing purple crystal embedded within a stone. This is one of the stones that the state is searching for, and you should [mine] it.",
+        "choices": {
+            "mine": "first_crystal - east"
+        }
+    },
     "2, 1": {},
     "2, 2": {},
     "2, 3": {},
@@ -60,5 +53,35 @@
     "4, 1": {},
     "4, 2": {},
     "4, 3": {},
-    "4, 4": {}
+    "4, 4": {},
+    "first_crystal - south": {
+        "message": "You have mined and found the first crystal. Though something seems off. The forest seems unusually quiet and the crows that produced the only sound apart from your footsteps seem to die down. You believe that you should [return] with what you have? Would you? Should you [continue]?",
+        "data": {
+            "crystal": [1],
+            "pickaxe": -1
+        },
+        "choices": {
+            "return": "",
+            "continue": "1, 2"
+        }
+    },
+    "first_crystal - east": {
+        "message": "You have mined and found the first crystal. Though something seems off. The forest seems unusually quiet and the crows that produced the only sound apart from your footsteps seem to die down. You believe that you should [return] with what you have? Would you? Should you [continue]?",
+        "data": {
+            "crystal": [1],
+            "pickaxe": -1
+        },
+        "choices": {
+            "return": "",
+            "continue": "2, 1"
+        }
+    },
+    "end": {
+        "message": "This is just a test; that is all for now. Text BEGIN to start a new game.",
+        "choices": {},
+        "next_state": "end"
+    },
+    "landmine": {
+        "message": "You have been walking for hours, and slowly have wandered away from the forest. The walk seems endless, and your feet are slowly growing tired."
+    }
 }

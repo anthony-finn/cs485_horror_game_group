@@ -79,22 +79,28 @@ class GameState:
 
         # Determine if the user's input is a valid action.
         if last_msg in choices:
-            self.last_state = self.state
+            cached_state = self.state
             self.state = choices[last_msg]
             next_choice_state = Choice(self.state)
-
-            # Special Game States
-            if last_msg == "mine":
-                if self.data['pickaxe'] == 0:
-                    return "You are unable to perform this action! You do not have a pickaxe."
-
+            
+            # Apply Data Changes
             if hasattr(next_choice_state, 'data'):
+                # Special Game States
+                if last_msg == "mine":
+                    if next_choice_state.data['crystal'][0] not in self.data['crystals']:
+                        if self.data['pickaxe'] == 0:
+                            return "You are unable to perform this action! You do not have a pickaxe."
+                        else:
+                            self.data['crystals'].append(next_choice_state.data['crystal'][0])
+                    else:
+                        return "You have already collected this crystal fragment!"
+                        
                 for index in next_choice_state.data:
                     value = next_choice_state.data[index]
                     if type(value) is int:
                         self.data[index] += value
-                
 
+            self.last_state = cached_state
             return next_choice_state.message
         elif hasattr(choice_state, 'next_state'):
             # No Input Required, thus set state to "next_state"
