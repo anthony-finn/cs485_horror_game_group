@@ -3,5 +3,7 @@ secrets:
         region_name : "us-west-1"
 twilio:
         phone_number: "+18585440353"
+developers:
+        - "local_terminal"
 
 
