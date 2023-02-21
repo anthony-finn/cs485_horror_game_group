@@ -14,6 +14,7 @@ guards pushed you out of the truck ordering you to mine or
 be executed. The dark forest is known to be as a no mans land
 as prisoners ordered to mine have never returned.
 
+**FOR FIRST CRYSTAL**
 Mined the first crystal:
 ------------------------
 You have mined and found the first crystal. Though something seems off.
@@ -21,6 +22,8 @@ The forest seems unusually quiet and the crows that produced the only
 sound apart from your footsteps seem to die down. You believe that you
 should return with what you have? Would you?
 
+**The following 3 messages are used for the other random crystal.**
+**Depending on the count, one of these would appear**
 Mined the second and third crystals:
 ------------------------------------
 Another crystal has been found! However, as you much as you want to be
@@ -37,14 +40,17 @@ being said however it is futile as the language spoken seems inhuman.
 The fog seems to be getting darker which results in the whispers getting
 louder. You can't take it. Should you return or find that final crystal?
 
-Mined the last crystal and good ending:
---------------------------------------
+Mined the last crystal:
+-----------------------
 You found it! The last crystal! The whispers and your prediction of your
 fate was not able to overcome your ambition. You quickly ran back to
 the prison guards that are waiting. However, it looked as someone or
 something has attacked as the truck as been damaged and the guards
 being killed. Examining them, they have been killed by some sort
 of monster based on their wounds.
+
+Good ending:
+-----------
 As you turn around, you see a silhouette of a tall figure. The figure
 comes closer and exposes itself as the demon of the damned forest. As
 punishment for invading its home, it exposes her true form which is
@@ -56,6 +62,7 @@ truck keys and start the truck. You drove away from this damned forest,
 wishing you never encounter what you have witnessed again.
 
 If you did not collect all the crystals, this would be the bad ending:
+"X" would be the current counter for the crystals
 ---------------------------------------------------------------------
 Coming back with X amount of crystals, you bowed your head in shame
 not successful in completing your task. You expected the worst, either
@@ -94,7 +101,7 @@ Items:
 ------
 Crystal: Essential for getting good ending. 5 are needed.
 Pickaxe: Mines crystal. Good for 2 uses.
-Scimitar: Weapon used against hellhound. Good to protect against 1 attack.
+Sword/Weapon: Weapon used against hellhound. Good to protect against 1 attack.
 
 Locations:
 ----------
@@ -103,12 +110,19 @@ Abandoned house: House that is in ruins which contains 1 crystal and
 
 Skeleton: Skeleton of an unfortunate prisoner. Contains 1 pickaxe.
 
-Burned up tree: Tree which contains 1 crystal.
+Demon statue: Statue of a demon, contains 1 crystal.
 
-Hostile:
---------
+Hostile and spawn rate:
+-----------------------
 Hellhound: Hostile against player. Possibility of spawning would increase
 as player gets more crystals.
+0 crystal = 0% spawn
+1 crystal = 10% spawn
+2 crystal = 20% spawn
+3 crystal = 30% spawn
+4 crystal = 40% spawn
+5 crystal = 50% spawn
+
 
 Direction/Graph of the game map:
 -------------------------------
@@ -116,11 +130,13 @@ The game is set to be a 4x4 grid with the player starting at coordinate (1,1).
 Locations of certain points of interests (POIs) are TBD. The POIs are the
 following: Abandoned House, Skeleton, Burned Tree. POIs will be guaranteed
 crystal locations. Remaining 2 would spawn randomly within the map.
-House: (1,4) ; Skeleton (3,2); Tree (4,4)
-Additional dialogue:
---------------------
+House: (1,3) ; Skeleton (3,2); Statue (4,3)
+
+Additional dialogue for empty coordinates:
+------------------------------------------
 This dialogue is to contain that nothing is found within a coordinate and would
-instead the following.
+instead the following. The empty coordinate line is the last one that should
+be printed. Note these are in no particular order.
 
 Empty coordinate (added at the end
 of each message): Observing the surrounding area, nothing can be found.
@@ -129,4 +145,48 @@ of each message): Observing the surrounding area, nothing can be found.
 struggling to maintain as escaping would mean certain death after hearing the
 rumors that no one can leave.
 
-TBW
+2: Knowing that being a prisoner of the facist empire is the equivalent of
+death, a chance of freedom is forever lost.
+
+3. Walking through the forest, you find pawprints that were a bit strange.
+At first, you thought the guards released the hounds however the prints
+are much larger than any hound or other animal.
+
+4. It's depressing seeing how in this dense forests, none of the trees have
+leaves. It appears that they are enclosing you in a cold embrace. Maybe there
+is no hope left?
+
+5. You recall your crime, knowing that something trivial as shoplifting a can
+of soup can land you here. It wasn't your fault that the Imperial economy is
+such a shitshow.
+
+6. A woman's scream was heard. What the hell was that? It sounded like the
+scream before murder. It reminded you of your wife, before she was executed
+for anti-imperial speech.
+
+7.
+
+
+POI dialogue:
+-------------
+This dialogue is to be shown in the points of interest. 
+
+House:
+Why would there be a house in a remote part of the country? As you entered
+the house, you find it abandoned long ago as the furniture resembled that
+this was a different time period, with Victorian era style being adopted.
+However, going through the basement you were able to find a crystal and
+pickaxe.
+
+Skeleton:
+You were shocked to find a skull leading to parts of a skeleton. You find that
+the corpse was wearing the prison uniform, ripped as if a wolf attacked it.
+You were able to find his pickaxe and based on the condition of it, it looked
+like this late prisoner was very unlucky as it had never been used.
+
+Demon statue:
+A seemingly out of place state of a woman was appearing before you eyes in this
+forest. The statue looked demonic as in the bottom there is text that is from an
+unknown language to man. However, at the bottom was a crystal that looks like it
+was waiting for someone to mine it. Knowing that you aren't in any better position
+than you are in now, you mine it.
