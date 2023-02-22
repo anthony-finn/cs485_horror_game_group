@@ -2,7 +2,7 @@ Dialogue for the game to be kept:
 
 NOTE:
 -----
-This file contains a rough draft of the story and the messages
+This file contains the story and the messages
 posted here are examples of what we should send to the player.
 
 
@@ -164,7 +164,26 @@ such a shitshow.
 scream before murder. It reminded you of your wife, before she was executed
 for anti-imperial speech.
 
-7.
+7. The lack of color in this forest really does set in your future. This is
+hell, and there seems to be no hope or chance to escape from it.
+
+8. The cold breeze blows through your skin as the thin material of your
+clothes does nothing to protect you. It weather seems cold enough to
+produce snow, but strangly that is not the case.
+
+9. You find yourself in an old industrial building which has stripped of
+all resources. Judging from the imperial history, this building was most
+likely used to mine and contain the crystals you're after.
+
+10. You managed to find a beat up teddy bear lying on the ground. You pick
+it up, imagining the probable memories of the teddy bear and its owner. You
+plan to take it with you, as you don't want your solitude making you
+insane.
+
+11. You managed to find an abandoned playground with the equipment all
+deformed and rusted up. You find the written names and drawings of the
+children who once played here buried within the dust. Examining the damages
+of the equipment, this was not caused naturally, but by some sort of beast.
 
 
 POI dialogue:
