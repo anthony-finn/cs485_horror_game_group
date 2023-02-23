@@ -103,6 +103,10 @@ Crystal: Essential for getting good ending. 5 are needed.
 Pickaxe: Mines crystal. Good for 2 uses.
 Sword/Weapon: Weapon used against hellhound. Good to protect against 1 attack.
 
+Description of crystal:
+-----------------------
+Glowing purple gem; it stands out among the grayness of the forest.
+
 Locations:
 ----------
 Abandoned house: House that is in ruins which contains 1 crystal and 
