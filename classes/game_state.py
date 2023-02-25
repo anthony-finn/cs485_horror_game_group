@@ -42,9 +42,11 @@ class GameState:
     def start_new_game(self, _ = None) -> str:
         self.state = "intro"
         self.last_state = ""
+        self.visited_states = []
         self.data = {
             'crystals': [],
-            'pickaxe': 1
+            'pickaxe': 1,
+            'probability': 0
         }
 
         self.save()
@@ -94,12 +96,16 @@ class GameState:
                             self.data['crystals'].append(next_choice_state.data['crystal'][0])
                     else:
                         return "You have already collected this crystal fragment!"
-                        
-                for index in next_choice_state.data:
-                    value = next_choice_state.data[index]
-                    if type(value) is int:
-                        self.data[index] += value
+                
+                # Do not add data if this state has already been visisted
+                if self.state not in self.visited_states:
+                    # Add data
+                    for index in next_choice_state.data:
+                        value = next_choice_state.data[index]
+                        if type(value) is int:
+                            self.data[index] += value
 
+            self.visited_states.append(self.state)
             self.last_state = cached_state
             return next_choice_state.message
         elif hasattr(choice_state, 'next_state'):
