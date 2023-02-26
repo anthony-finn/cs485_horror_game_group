@@ -190,6 +190,19 @@ children who once played here buried within the dust. Examining the damages
 of the equipment, this was not caused naturally, but by some sort of beast.
 
 
+POI introductions:
+------------------
+This dialogue is to be shown when you're near a location.
+
+House: You were able to find a building in the horizon. It seems intact, hopefully someone's 
+there to help you.
+
+Skeleton: You find some footprints leading to someone laying down. Judging from their clothing,
+it seems to be another prisoner. Maybe they can be of some use.
+
+Demon Statue: A tall figure was standing stationary within the fog. Though this seems
+out of place in this purgatory.
+
 POI dialogue:
 -------------
 This dialogue is to be shown in the points of interest. 
