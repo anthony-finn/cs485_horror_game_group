@@ -23,8 +23,8 @@
     "1, 1": {
         "message": "You've reached the area where the guards dropped you off. Observing the surrounding area, nothing can be found.\n\nShould you head [east], or [south]?",
         "choices": {
-            "east": "2, 2",
-            "south": "1, 3"
+            "east": "2, 1",
+            "south": "1, 2"
         }
     },
     "1, 2": {
@@ -36,7 +36,7 @@
         }
     },
     "1, 3": {
-        "message": "You see an old house that has been boarded up. It looks like no one has been here in a long time. You're not sure if you should [enter] the house, or should continue [north], [east], or [south].",
+        "message": "You were able to find a building in the horizon. It seems intact, hopefully someone's there to help you. You're not sure if you should [enter] the house, or should continue [north], [east], or [south].",
         "choices": {
             "north": "1, 2",
             "east": "2, 3",
@@ -78,7 +78,7 @@
         }
     },
     "2, 4": {
-        "message": "",
+        "message": "[NOT COMPLETE YET]",
         "choices" : {
             "west": "1, 4",
             "north": "2, 3",
@@ -86,7 +86,7 @@
         }
     },
     "3, 1": {
-        "message": "",
+        "message": "The lack of color in this forest really does set in your future. This is hell, and there seems to be no hope or chance to escape from it. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [south], or [east]?",
         "choices" : {
             "west": "2, 1",
             "south": "3, 2",
@@ -94,16 +94,17 @@
         }
     },
     "3, 2": {
-        "message": "",
+        "message": "You find some footprints leading to someone laying down. Judging from their clothing, it seems to be another prisoner. Maybe they can be of some [use].",
         "choices" : {
             "west": "2, 2",
             "north": "3, 1",
             "south": "3, 3",
-            "east": "4, 2"
+            "east": "4, 2",
+            "use": ""
         }
     },
     "3, 3": {
-        "message": "",
+        "message": "The cold breeze blows through your skin as the thin material of your clothes does nothing to protect you. It weather seems cold enough to produce snow, but strangly that is not the case. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], [south], or [east]?",
         "choices" : {
             "west": "2, 3",
             "north": "3, 2",
@@ -112,7 +113,7 @@
         }
     },
     "3, 4": {
-        "message": "",
+        "message": "You find yourself in an old industrial building which has stripped of all resources. Judging from the imperial history, this building was most likely used to mine and contain the crystals you're after. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], or [east]?",
         "choices" : {
             "west": "2, 4",
             "north": "3, 3",
@@ -120,14 +121,14 @@
         }
     },
     "4, 1": {
-        "message": "",
+        "message": "[NOT COMPLETE YET]",
         "choices" : {
             "west": "3, 1",
             "south": "4, 2"
         }
     },
     "4, 2": {
-        "message": "",
+        "message": "You managed to find a beat up teddy bear lying on the ground. You pick it up, imagining the probable memories of the teddy bear and its owner. You plan to take it with you, as you don't want your solitude making you insane. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], or [south]?",
         "choices" : {
             "west": "3, 2",
             "north": "4, 1",
@@ -135,7 +136,7 @@
         }
     },
     "4, 3": {
-        "message": "",
+        "message": "[NOT COMPLETE YET]",
         "choices" : {
             "west": "3, 3",
             "north": "4, 2",
@@ -143,14 +144,14 @@
         }
     },
     "4, 4": {
-        "message": "",
+        "message": "You managed to find an abandoned playground with the equipment all deformed and rusted up. You find the written names and drawings of the children who once played here buried within the dust. Examining the damages of the equipment, this was not caused naturally, but by some sort of beast. Observing the surrounding area, nothing can be found.\n\nShould you head [west] or [north]?",
         "choices" : {
             "west": "3, 4",
             "north": "4, 3"
         }
     },
     "1, 1 - special": {
-        "message": "Traversing through this purgatory, the little hope you currently have is struggling to maintain as escaping would mean certain death after hearing the rumors that no one can leave. Observing the surrounding area, nothing can be found.\nShould you head [east] or [south]?",
+        "message": "Traversing through this purgatory, the little hope you currently have is struggling to maintain as escaping would mean certain death after hearing the rumors that no one can leave. Observing the surrounding area, nothing can be found.\n\nShould you head [east] or [south]?",
         "choices": {
             "south": "1, 2 - special",
             "east": "2, 1 - special"
@@ -176,7 +177,7 @@
             "probability": 0.1
         },
         "choices": {
-            "return": "",
+            "return": "return",
             "continue": "1, 2"
         }
     },
@@ -188,7 +189,7 @@
             "probability": 0.1
         },
         "choices": {
-            "return": "",
+            "return": "return",
             "continue": "2, 1"
         }
     },
@@ -196,17 +197,85 @@
        "message": "Why would there be a house in a remote part of the country? As you entered the house, you find it abandoned long ago as the furniture resembled that this was a different time period, with Victorian era style being adopted. However, going through the basement you were able to find a crystal and pickaxe.",
         "data": {
             "crystal": [2],
-            "pickaxe": 1
+            "pickaxe": 2,
+            "probability": 0.1
         },
         "choices": {},
         "next_state": "1, 3"
+    },
+    "second_crystal": {
+        "message": "Another crystal has been found! However, as you much as you want to be proud of your work, your situation pulls you back. Knowing how the empire has been known to punish prisoners severely as well as the rumor of prisoners being transferred somewhere else once their sentences are up. Will you [return] with what you have? Should you [continue]?",
+        "data": {
+            "crystal": [3]
+        },
+        "choices": {
+            "return": "return",
+            "continue": "2, 4"
+        }
+    },
+    "skeleton" : {
+        "message": "After frisking the skeleton, you found a pickaxe and a small sword. These should be useful.",
+        "data": {
+            "pickaxe": 2,
+            "sword": 1
+        },
+        "next_state": "3, 2"
     },
     "end": {
         "message": "This is just a test; that is all for now. Text BEGIN to start a new game.",
         "choices": {},
         "next_state": "end"
     },
+    "monster - no weapon - success": {
+        "message": "Traversing through this forest, you hear an unusual growl from behind. You turn to find some beast that seems inhuman. It begins to run at you. You have no way of hurting it. Maybe you can [run].",
+        "choices": {
+            "run": "run - success"
+        }
+    },
+    "monster - no weapon - fail": {
+        "message": "Traversing through this forest, you hear an unusual growl from behind. You turn to find some beast that seems inhuman. It begins to run at you. You have no way of hurting it. Maybe you can [run].",
+        "choices": {
+            "run": "run - fail"
+        }
+    },
+    "monster - weapon": {
+        "message": "Traversing through this forest, you hear an unusual growl from behind. You turn to find some beast that seems inhuman. It begins to run at you. You are able to [fight] it with your sword.",
+        "choices": {
+            "fight": "fight"
+        }
+    },
+    "fight": {
+        "message": "The beast slashes at you, but you were able to deflect it. You were able to graze the beast's thick skin and draw blood. The beast seems startled and retreats back into the darkness of the forest. Your sword crumples from the attack, but you are able to continue.",
+        "choices": {},
+        "next_state": "LAST_STATE",
+        "repeatable": true,
+        "data": {
+            "sword": -1
+        }
+    },
+    "exposed": {
+        "message": "As it exposes itself, your worst memories flash before your eyes. The grief, the sadness, the anger all returning. It is as all of your happy and positive memories vanished and you have no recollection. Succumbing to your rapid depression, you take one of the guard's knives and stabbed yourself, ending your life. In the end, you are another statistic to the rumor of prisoners never coming back from this forest.",
+        "choices": {},
+        "next_state": "end"
+    },
+    "run - fail": {
+        "message": "You attempt to run, but as you are running you fell into a ditch. As you turn around, you see a silhouette of a tall figure. The figure comes closer and exposes itself as the demon of the damned forest. As punishment for invading its home, it exposes her true form which is something humans can not face.",
+        "next_state": "exposed",
+        "choices": {}
+    },
+    "run - success": {
+        "message": "You attempt to run as fast as you can. You never have run as fast as you could, but luckily you were able to escape the beast.",
+        "next_state": "LAST_STATE",
+        "choices": {}
+    },
+    "return": {
+        "message": "",
+        "chocies": {},
+        "next_state": ""
+    },
     "landmine": {
-        "message": "You have been walking for hours, and slowly have wandered away from the forest. The walk seems endless, and your feet are slowly growing tired."
+        "message": "You have been walking for hours, and slowly have wandered away from the forest. The walk seems endless, and your feet are slowly growing tired.",
+        "choices": {},
+        "next_state": ""
     }
 }

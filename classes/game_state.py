@@ -1,7 +1,9 @@
 from classes.choice import Choice
 import os
 import pickle
-
+import math
+import random
+import re
 from tools.config import PROJECT_ROOT
 
 class GameState:
@@ -46,6 +48,7 @@ class GameState:
         self.data = {
             'crystals': [],
             'pickaxe': 1,
+            'sword': 1,
             'probability': 0
         }
 
@@ -82,6 +85,12 @@ class GameState:
         # Determine if the user's input is a valid action.
         if last_msg in choices:
             cached_state = self.state
+
+            if choices[last_msg] == "LAST_STATE":
+                self.state = self.last_state
+                next_choice_state = Choice(self.state)
+                return next_choice_state.message
+
             self.state = choices[last_msg]
             next_choice_state = Choice(self.state)
             
@@ -98,22 +107,50 @@ class GameState:
                         return "You have already collected this crystal fragment!"
                 
                 # Do not add data if this state has already been visisted
-                if self.state not in self.visited_states:
+                if self.state not in self.visited_states or (hasattr(next_choice_state, 'repeatable') and next_choice_state.repeatable == True):
                     # Add data
                     for index in next_choice_state.data:
                         value = next_choice_state.data[index]
-                        if type(value) is int:
+                        if type(value) in [int, float]:
                             self.data[index] += value
+            else:
+                # Monster Encounter
+                # The chance of the monster must be > 0 and they must perform a movement action.
+                if last_msg in ["west", "north", "south", "east"] and self.data['probability'] > 0:
+                    chance = self.data['probability']
+                    passed = 1 if chance >= 1 else math.floor(random.uniform(0, 1/(1-chance)))
+                    if (passed == 1):
+                        self.last_state = self.state
+
+                        if self.data['sword'] == 0:
+                            if random.choice([True, False]) == True:
+                                self.state = "monster - no weapon - success"
+                            else:
+                                self.state = "monster - no weapon - fail"
+                        else:
+                            self.state = "monster - weapon"
+
+                        return Choice(self.state).message
 
             self.visited_states.append(self.state)
-            self.last_state = cached_state
+
+            # Special States that are not coordinates shouldnt be placed in last_state
+            if re.search(r'[1-9]+, [1-9]+', self.state):
+                self.last_state = cached_state
+
             return next_choice_state.message
         elif hasattr(choice_state, 'next_state'):
             # No Input Required, thus set state to "next_state"
-            self.last_state = self.state
-            self.state = choice_state.next_state
-            next_choice_state = Choice(self.state)
-            return next_choice_state.message
+            if choice_state.next_state == "LAST_STATE":
+                self.state = self.last_state
+                next_choice_state = Choice(self.state)
+                return next_choice_state.message
+            else:
+                self.last_state = self.state
+                self.state = choice_state.next_state
+                next_choice_state = Choice(self.state)
+                self.visited_states.append(self.state)
+                return next_choice_state.message
 
         # Invalid Option, so resend message
         return "Invalid action or command. Text LAST to repeat the previous game message."
