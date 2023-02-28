@@ -292,7 +292,7 @@
         }
     },
     "exposed": {
-        "message": "As it exposes itself, your worst memories flash before your eyes. The grief, the sadness, the anger all returning. It is as all of your happy and positive memories vanished and you have no recollection. Succumbing to your rapid depression, you take one of the guard's knives and stabbed yourself, ending your life. In the end, you are another statistic to the rumor of prisoners never coming back from this forest.",
+        "message": "As it exposes itself, your worst memories flash before your eyes. The grief, the sadness, the anger all returning. It is as all of your happy and positive memories vanished and you have no recollection. Succumbing to your rapid depression, you took out your pocket knife and stabbed yourself, ending your life. In the end, you are another statistic to the rumor of prisoners never coming back from this forest.",
         "choices": {},
         "next_state": "end"
     },
