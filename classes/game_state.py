@@ -126,7 +126,7 @@ class GameState:
                         else:
                             self.data['crystals'].append(next_choice_state.data['crystal'][0])
                     else:
-                        return "You have already collected this crystal fragment!"
+                        return "You have already collected this crystal fragment! Should you [return] or [continue] finding crystals?"
 
                 # Do not add data if this state has already been visisted
                 if self.state not in self.visited_states or (hasattr(next_choice_state, 'repeatable') and next_choice_state.repeatable):
@@ -138,7 +138,7 @@ class GameState:
             else:
                 # Monster Encounter
                 # The chance of the monster must be > 0 and they must perform a movement action.
-                if last_msg in ["north", "east", "south", "west"] and self.data['probability'] > 0:
+                if last_msg in ["west", "north", "south", "east"] and self.data['probability'] > 0:
                     chance = self.data['probability']
                     passed = 1 if chance >= 1 else math.floor(random.uniform(0, 1/(1-chance)))
                     if (passed == 1):
