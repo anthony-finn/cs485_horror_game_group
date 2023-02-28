@@ -4,7 +4,7 @@
         "choices": {}
     },
     "intro": {
-        "message": "Welcome to Forest of the Damned! Throughout the game, you will see actions surrounded with [brackets]. Text us that phrase without the brackets to perform the action. (Case does not matter.) Type [ok] to continue.",
+        "message": "Welcome to Forest of the Damned! Throughout the game, you will see actions surrounded with [brackets]. Text us that phrase without the brackets to perform the action. (Case does not matter.) If there are no brackets, then you may type anything to continue. Type [ok] to continue.",
         "choices": {
             "ok": "story description",
             "brackets": "secret"
@@ -78,7 +78,7 @@
         }
     },
     "2, 4": {
-        "message": "[NOT COMPLETE YET]",
+        "message": "The barren landscape of the forest reminded you of the war that took place. The government had no care for its citizens as it left them to fend for themselves. Nothing of interest could be found here.\n\nShould you head [west], [north], or [east]?",
         "choices" : {
             "west": "1, 4",
             "north": "2, 3",
@@ -94,13 +94,13 @@
         }
     },
     "3, 2": {
-        "message": "You find some footprints leading to someone laying down. Judging from their clothing, it seems to be another prisoner. Maybe they can be of some [use].",
+        "message": "You find some footprints leading to someone laying down. Judging from their clothing, it seems to be another prisoner. Maybe they can be of some [use].\n\nShould you head [west], [north], [south], or [east]?",
         "choices" : {
             "west": "2, 2",
             "north": "3, 1",
             "south": "3, 3",
             "east": "4, 2",
-            "use": ""
+            "use": "skeleton"
         }
     },
     "3, 3": {
@@ -121,7 +121,7 @@
         }
     },
     "4, 1": {
-        "message": "[NOT COMPLETE YET]",
+        "message": "You scavenged the area to find something only to find nothing. You cursed at your situation, however you had to maintain composure lest you go mad and lose your humanity.\n\nShould you head [west], or [south]?",
         "choices" : {
             "west": "3, 1",
             "south": "4, 2"
@@ -136,11 +136,12 @@
         }
     },
     "4, 3": {
-        "message": "[NOT COMPLETE YET]",
+        "message": "A tall figure was standing stationary within the fog. Though this seems out of place in this purgatory. Should you [approach] it, or should you head [west], [north], or [south]?",
         "choices" : {
             "west": "3, 3",
             "north": "4, 2",
-            "south": "4, 4"
+            "south": "4, 4",
+            "approach": "statue_crystal"
         }
     },
     "4, 4": {
@@ -150,6 +151,8 @@
             "north": "4, 3"
         }
     },
+
+
     "1, 1 - special": {
         "message": "Traversing through this purgatory, the little hope you currently have is struggling to maintain as escaping would mean certain death after hearing the rumors that no one can leave. Observing the surrounding area, nothing can be found.\n\nShould you head [east] or [south]?",
         "choices": {
@@ -203,22 +206,44 @@
         "choices": {},
         "next_state": "1, 3"
     },
-    "second_crystal": {
+    "statue_crystal": {
+        "message": "A seemingly out of place state of a woman was appearing before you eyes in this forest. The statue looked demonic as in the bottom there is text that is from an unknown language to man. However, at the bottom was a crystal that looks like it was waiting for someone to take it. Knowing that you aren't in any better position than you are in now, you take it.",
+        "choices": {},
+        "next_state": "4, 3",
+        "data": {
+            "crystal": [3],
+            "probability": 0.1
+        }
+    },
+    "crystal0": {
         "message": "Another crystal has been found! However, as you much as you want to be proud of your work, your situation pulls you back. Knowing how the empire has been known to punish prisoners severely as well as the rumor of prisoners being transferred somewhere else once their sentences are up. Will you [return] with what you have? Should you [continue]?",
         "data": {
-            "crystal": [3]
+            "crystal": [4],
+            "probability": 0.1
         },
         "choices": {
             "return": "return",
-            "continue": "2, 4"
+            "continue": "LAST_STATE"
+        }
+    },
+    "crystal1": {
+        "message": "Something seems off about the situation. As you have almost completed your tasks, some whispers can be heard. You tried to decipher what is being said however it is futile as the language spoken seems inhuman. The fog seems to be getting darker which results in the whispers getting louder. You can't take it. Should you [return] or [continue] finding crystals?",
+        "data": {
+            "crystal": [5],
+            "probability": 0.1
+        },
+        "choices": {
+            "return": "return",
+            "continue": "LAST_STATE"
         }
     },
     "skeleton" : {
-        "message": "After frisking the skeleton, you found a pickaxe and a small sword. These should be useful.",
+        "message": "You were shocked to find a skull leading to parts of a skeleton. You find that the corpse was wearing the prison uniform, ripped as if a wolf attacked it. You were able to find his pickaxe and based on the condition of it, it looked like this late prisoner was very unlucky as it had never been used.",
         "data": {
             "pickaxe": 2,
             "sword": 1
         },
+        "choices": {},
         "next_state": "3, 2"
     },
     "end": {
@@ -269,7 +294,7 @@
         "choices": {}
     },
     "return": {
-        "message": "",
+        "message": "Coming back with <X> crystals, you bowed your head in shame not successful in completing your task. You expected the worst, either another beating or an extension to your sentence. However, as you returned you find the guards dead. Examining their wounds, they were attacked by something inhuman. ",
         "chocies": {},
         "next_state": ""
     },

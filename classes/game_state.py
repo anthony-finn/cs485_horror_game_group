@@ -31,6 +31,9 @@ class GameState:
         """Clears the in-memory state data. Does not remove save game on disk!"""
         self.state = None
         self.data = None
+        self.last_state = None
+        self.visited_states = []
+        self.random_crystals = []
 
     def delete_save(self, _ = None):
         path = self.get_save_path()
@@ -45,12 +48,15 @@ class GameState:
         self.state = "intro"
         self.last_state = ""
         self.visited_states = []
+        self.random_crystals = random.sample(["1, 4", "2, 2", "2, 3", "2, 4", "3, 1", "3, 3", "3, 4", "4, 1", "4, 2", "4, 4"], 2)
         self.data = {
             'crystals': [],
-            'pickaxe': 1,
+            'pickaxe': 2,
             'sword': 1,
-            'probability': 0
+            'probability': 0,
         }
+
+        print(self.random_crystals)
 
         self.save()
         return "Successfully created new save game.\n\n" + self.get_last_message()
@@ -71,6 +77,9 @@ class GameState:
 
                 self.state = loaded.state # No way to dereference `self` :/
                 self.data = loaded.data
+                self.last_state = loaded.last_state
+                self.visited_states = loaded.visited_states
+                self.random_crystals = loaded.random_crystals
 
                 return self
         else:
@@ -78,26 +87,38 @@ class GameState:
 
     def run(self, last_msg: str) -> str:
         """Executes one cycle of game logic. Retunrs a message to send to the player."""
-
+        cached_last_state = self.last_state
+        if re.search(r'[1-9]+, [1-9]+', self.state):
+            self.last_state = self.state
         choice_state = Choice(self.state)
         choices = choice_state.choices
 
+        # Random Crystal Mining
+        if self.state in self.random_crystals:
+            choices["mine"] = "crystal" + str(self.random_crystals.index(self.state))
+
         # Determine if the user's input is a valid action.
         if last_msg in choices:
-            cached_state = self.state
-
             if choices[last_msg] == "LAST_STATE":
-                self.state = self.last_state
+                self.state = cached_last_state
+                prefix_message_text = ""
+                if self.state in self.random_crystals:
+                    prefix_message_text = "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
                 next_choice_state = Choice(self.state)
-                return next_choice_state.message
+                return prefix_message_text + next_choice_state.message
 
             self.state = choices[last_msg]
             next_choice_state = Choice(self.state)
-            
+
+            # Random Crystals
+            prefix_message_text = ""
+            if self.state in self.random_crystals:
+                prefix_message_text = "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
+
             # Apply Data Changes
             if hasattr(next_choice_state, 'data'):
                 # Special Game States
-                if last_msg == "mine":
+                if last_msg in ["mine", "approach"]:
                     if next_choice_state.data['crystal'][0] not in self.data['crystals']:
                         if self.data['pickaxe'] == 0:
                             return "You are unable to perform this action! You do not have a pickaxe."
@@ -118,6 +139,7 @@ class GameState:
                 # The chance of the monster must be > 0 and they must perform a movement action.
                 if last_msg in ["west", "north", "south", "east"] and self.data['probability'] > 0:
                     chance = self.data['probability']
+                    print(chance)
                     passed = 1 if chance >= 1 else math.floor(random.uniform(0, 1/(1-chance)))
                     if (passed == 1):
                         self.last_state = self.state
@@ -134,19 +156,19 @@ class GameState:
 
             self.visited_states.append(self.state)
 
-            # Special States that are not coordinates shouldnt be placed in last_state
-            if re.search(r'[1-9]+, [1-9]+', self.state):
-                self.last_state = cached_state
-
-            return next_choice_state.message
+            return prefix_message_text + next_choice_state.message
         elif hasattr(choice_state, 'next_state'):
             # No Input Required, thus set state to "next_state"
             if choice_state.next_state == "LAST_STATE":
                 self.state = self.last_state
                 next_choice_state = Choice(self.state)
-                return next_choice_state.message
+
+                prefix_message_text = ""
+                if self.state in self.random_crystals:
+                    prefix_message_text = "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
+
+                return prefix_message_text + next_choice_state.message
             else:
-                self.last_state = self.state
                 self.state = choice_state.next_state
                 next_choice_state = Choice(self.state)
                 self.visited_states.append(self.state)
