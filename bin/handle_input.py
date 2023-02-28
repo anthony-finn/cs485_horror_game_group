@@ -27,6 +27,7 @@ NO_SAVE_MSG = Choice("init").message
 def handle_input(game: GameState, in_msg: str) -> str:
     found_cmd = COMMANDS.get(in_msg)
 
+    in_msg = in_msg.lower()
     if found_cmd:
         out_msg = found_cmd(game, in_msg)
     elif game.load():
