@@ -260,7 +260,7 @@
         "next_state": "3, 2"
     },
     "end": {
-        "message": "This is just a test; that is all for now. Text BEGIN to start a new game.",
+        "message": "You've reached the end of the game. Text BEGIN to start a new game.",
         "choices": {},
         "next_state": "end"
     },
