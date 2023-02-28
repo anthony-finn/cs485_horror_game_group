@@ -56,8 +56,6 @@ class GameState:
             'probability': 0,
         }
 
-        print(self.random_crystals)
-
         self.save()
         return "Successfully created new save game.\n\n" + self.get_last_message()
 
@@ -93,17 +91,30 @@ class GameState:
         choice_state = Choice(self.state)
         choices = choice_state.choices
 
+        prefix_message_text = ""
+
+        if len(self.data['crystals']) >= 5:
+                prefix_message_text = "You have mined all the required minerals that the state has ordered you to. You should return back to the place where the guards dropped you off. "
+
         # Random Crystal Mining
         if self.state in self.random_crystals:
             choices["mine"] = "crystal" + str(self.random_crystals.index(self.state))
 
         # Determine if the user's input is a valid action.
         if last_msg in choices:
+            if choices[last_msg] == "return":
+                if len(self.data['crystals']) >= 5:
+                    self.state = "return - success"
+                else:
+                    self.state = "return - fail"
+                    return str(Choice(self.state).message).replace("<X>", str(len(self.data['crystals'])))
+
+                return Choice(self.state).message
+
             if choices[last_msg] == "LAST_STATE":
                 self.state = cached_last_state
-                prefix_message_text = ""
                 if self.state in self.random_crystals:
-                    prefix_message_text = "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
+                    prefix_message_text = prefix_message_text + "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
                 next_choice_state = Choice(self.state)
                 return prefix_message_text + next_choice_state.message
 
@@ -111,14 +122,13 @@ class GameState:
             next_choice_state = Choice(self.state)
 
             # Random Crystals
-            prefix_message_text = ""
             if self.state in self.random_crystals:
-                prefix_message_text = "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
+                prefix_message_text = prefix_message_text + "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
 
             # Apply Data Changes
             if hasattr(next_choice_state, 'data'):
                 # Special Game States
-                if last_msg in ["mine", "approach"]:
+                if last_msg == "mine":
                     if next_choice_state.data['crystal'][0] not in self.data['crystals']:
                         if self.data['pickaxe'] == 0:
                             return "You are unable to perform this action! You do not have a pickaxe."
@@ -139,7 +149,6 @@ class GameState:
                 # The chance of the monster must be > 0 and they must perform a movement action.
                 if last_msg in ["west", "north", "south", "east"] and self.data['probability'] > 0:
                     chance = self.data['probability']
-                    print(chance)
                     passed = 1 if chance >= 1 else math.floor(random.uniform(0, 1/(1-chance)))
                     if (passed == 1):
                         self.last_state = self.state
@@ -163,9 +172,8 @@ class GameState:
                 self.state = self.last_state
                 next_choice_state = Choice(self.state)
 
-                prefix_message_text = ""
                 if self.state in self.random_crystals:
-                    prefix_message_text = "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
+                    prefix_message_text = prefix_message_text + "Looking around the area you see a glowing purple gem encased in rock; it stands out from the forest. It looks like you can [mine] it. "
 
                 return prefix_message_text + next_choice_state.message
             else:
