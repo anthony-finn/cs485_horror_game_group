@@ -21,7 +21,7 @@
         "next_state": "1, 1 - special"
     },
     "1, 1": {
-        "message": "You've reached the area where the guards dropped you off. Will you call the guards back and [return]? Observing the surrounding area, nothing can be found.\n\nShould you head [east], or [south]?",
+        "message": "You've reached the area where the guards dropped you off. Will you call the guards back and [return]? Observing the surrounding area, nothing else can be found.\n\nShould you head [east], or [south]?",
         "choices": {
             "east": "2, 1",
             "south": "1, 2",
@@ -29,7 +29,7 @@
         }
     },
     "1, 2": {
-        "message": "Knowing that being a prisoner of the facist empire is the equivalent of death, a chance of freedom is forever lost. Observing the surrounding area, nothing can be found.\n\nShould you head [north], [east], or [south]?",
+        "message": "Knowing that being a prisoner of the facist empire is the equivalent of death, a chance of freedom is forever lost. Observing the surrounding area, nothing else can be found.\n\nShould you head [north], [east], or [south]?",
         "choices": {
             "north": "1, 1",
             "east": "2, 2",
@@ -46,14 +46,14 @@
         }
     },
     "1, 4": {
-        "message": "Walking through the forest, you find pawprints that were a bit strange. At first, you thought the guards released the hounds however the prints are much larger than any hound or other animal. Observing the surrounding area, nothing can be found.\n\nShould you head [north] or [east]?",
+        "message": "Walking through the forest, you find pawprints that were a bit strange. At first, you thought the guards released the hounds however the prints are much larger than any hound or other animal. Observing the surrounding area, nothing else can be found.\n\nShould you head [north] or [east]?",
         "choices": {
             "north": "1, 3",
             "east": "2, 4"
         }
     },
     "2, 1": {
-        "message": "It's depressing seeing how in this dense forests, none of the trees have leaves. It appears that they are enclosing you in a cold embrace. Maybe there is no hope left? Observing the surrounding area, nothing can be found.\n\nShould you head [west], [south], or [east]?",
+        "message": "It's depressing seeing how in this dense forests, none of the trees have leaves. It appears that they are enclosing you in a cold embrace. Maybe there is no hope left? Observing the surrounding area, nothing else can be found.\n\nShould you head [west], [south], or [east]?",
         "choices" : {
             "west": "1, 1",
             "south": "2, 2",
@@ -61,7 +61,7 @@
         }
     },
     "2, 2": {
-        "message": "You recall your crime, knowing that something trivial as shoplifting a can of soup can land you here. It wasn't your fault that the Imperial economy is such a shitshow. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], [south], or [east]?",
+        "message": "You recall your crime, knowing that something trivial as shoplifting a can of soup can land you here. It wasn't your fault that the Imperial economy is such a shitshow. Observing the surrounding area, nothing else can be found.\n\nShould you head [west], [north], [south], or [east]?",
         "choices" : {
             "west": "1, 2",
             "north": "2, 1",
@@ -70,7 +70,7 @@
         }
     },
     "2, 3": {
-        "message": "A woman's scream was heard. What the hell was that? It sounded like the scream before murder. It reminded you of your wife, before she was executed for anti-imperial speech. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], [south], or [east]?",
+        "message": "A woman's scream was heard. What the hell was that? It sounded like the scream before murder. It reminded you of your wife, before she was executed for anti-imperial speech. Observing the surrounding area, nothing else can be found.\n\nShould you head [west], [north], [south], or [east]?",
         "choices" : {
             "west": "1, 3",
             "north": "2, 2",
@@ -87,7 +87,7 @@
         }
     },
     "3, 1": {
-        "message": "The lack of color in this forest really does set in your future. This is hell, and there seems to be no hope or chance to escape from it. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [south], or [east]?",
+        "message": "The lack of color in this forest really does set in your future. This is hell, and there seems to be no hope or chance to escape from it. Observing the surrounding area, nothing else can be found.\n\nShould you head [west], [south], or [east]?",
         "choices" : {
             "west": "2, 1",
             "south": "3, 2",
@@ -105,7 +105,7 @@
         }
     },
     "3, 3": {
-        "message": "The cold breeze blows through your skin as the thin material of your clothes does nothing to protect you. It weather seems cold enough to produce snow, but strangly that is not the case. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], [south], or [east]?",
+        "message": "The cold breeze blows through your skin as the thin material of your clothes does nothing to protect you. It weather seems cold enough to produce snow, but strangly that is not the case. Observing the surrounding area, nothing else can be found.\n\nShould you head [west], [north], [south], or [east]?",
         "choices" : {
             "west": "2, 3",
             "north": "3, 2",
@@ -114,7 +114,7 @@
         }
     },
     "3, 4": {
-        "message": "You find yourself in an old industrial building which has stripped of all resources. Judging from the imperial history, this building was most likely used to mine and contain the crystals you're after. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], or [east]?",
+        "message": "You find yourself in an old industrial building which has stripped of all resources. Judging from the imperial history, this building was most likely used to mine and contain the crystals you're after. Observing the surrounding area, nothing else can be found.\n\nShould you head [west], [north], or [east]?",
         "choices" : {
             "west": "2, 4",
             "north": "3, 3",
@@ -129,7 +129,7 @@
         }
     },
     "4, 2": {
-        "message": "You managed to find a beat up teddy bear lying on the ground. You pick it up, imagining the probable memories of the teddy bear and its owner. You plan to take it with you, as you don't want your solitude making you insane. Observing the surrounding area, nothing can be found.\n\nShould you head [west], [north], or [south]?",
+        "message": "You managed to find a beat up teddy bear lying on the ground. You pick it up, imagining the probable memories of the teddy bear and its owner. You plan to take it with you, as you don't want your solitude making you insane. Observing the surrounding area, nothing else can be found.\n\nShould you head [west], [north], or [south]?",
         "choices" : {
             "west": "3, 2",
             "north": "4, 1",
@@ -146,7 +146,7 @@
         }
     },
     "4, 4": {
-        "message": "You managed to find an abandoned playground with the equipment all deformed and rusted up. You find the written names and drawings of the children who once played here buried within the dust. Examining the damages of the equipment, this was not caused naturally, but by some sort of beast. Observing the surrounding area, nothing can be found.\n\nShould you head [west] or [north]?",
+        "message": "You managed to find an abandoned playground with the equipment all deformed and rusted up. You find the written names and drawings of the children who once played here buried within the dust. Examining the damages of the equipment, this was not caused naturally, but by some sort of beast. Observing the surrounding area, nothing else can be found.\n\nShould you head [west] or [north]?",
         "choices" : {
             "west": "3, 4",
             "north": "4, 3"
@@ -155,7 +155,7 @@
 
 
     "1, 1 - special": {
-        "message": "Traversing through this purgatory, the little hope you currently have is struggling to maintain as escaping would mean certain death after hearing the rumors that no one can leave. Observing the surrounding area, nothing can be found.\n\nShould you head [east] or [south]?",
+        "message": "Traversing through this purgatory, the little hope you currently have is struggling to maintain as escaping would mean certain death after hearing the rumors that no one can leave. Observing the surrounding area, nothing else can be found.\n\nShould you head [east] or [south]?",
         "choices": {
             "south": "1, 2 - special",
             "east": "2, 1 - special"
