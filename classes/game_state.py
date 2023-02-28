@@ -102,15 +102,6 @@ class GameState:
 
         # Determine if the user's input is a valid action.
         if last_msg in choices:
-            if choices[last_msg] == "return":
-                if len(self.data['crystals']) >= 5:
-                    self.state = "return - success"
-                else:
-                    self.state = "return - fail"
-                    return str(Choice(self.state).message).replace("<X>", str(len(self.data['crystals'])))
-
-                return Choice(self.state).message
-
             if choices[last_msg] == "LAST_STATE":
                 self.state = cached_last_state
                 if self.state in self.random_crystals:

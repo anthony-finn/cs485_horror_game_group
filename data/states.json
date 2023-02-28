@@ -307,7 +307,7 @@
         "choices": {}
     },
     "return - fail": {
-        "message": "Coming back with <X> crystals, you bowed your head in shame not successful in completing your task. You expected the worst, either another beating or an extension to your sentence. However, as you returned you find the guards dead. Examining their wounds, they were attacked by something inhuman. ",
+        "message": "Coming back without the required number of crystals, you bowed your head in shame not successful in completing your task. You expected the worst, either another beating or an extension to your sentence. However, as you returned you find the guards dead. Examining their wounds, they were attacked by something inhuman. ",
         "choices": {},
         "next_state": "return - fail 2"
     },
