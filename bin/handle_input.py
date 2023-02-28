@@ -60,7 +60,7 @@ COMMANDS = {
     "REPEAT":  GameState.get_last_message,
 }
 
-NO_SAVE_MSG = Choice("0").message
+NO_SAVE_MSG = Choice("init").message
 
 # Module entry point
 
@@ -73,6 +73,7 @@ def handle_input(game: GameState, in_msg: str) -> str:
         ((k, v) for (k, v) in COMMANDS.items() if in_msg.startswith(k)),
         (None, None))
 
+    in_msg = in_msg.lower()
     if found_cmd:
         in_msg = in_msg[len(cmd_name) + 1:] # Crop to arguments only
         out_msg = found_cmd(game, in_msg)
